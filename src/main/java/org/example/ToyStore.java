@@ -1,11 +1,14 @@
 package org.example;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import java.util.*;
 
 public class ToyStore {
     private PriorityQueue<Toy> toysPriority;
     private ArrayList<Toy> toys;
     private ArrayList<Toy> prizes;
+
 
     public ToyStore() {
         Comparator<Toy> toyComparator = new Comparator<Toy>() {
@@ -40,6 +43,10 @@ public class ToyStore {
         if (checkToy(toy)) toysPriority.add(toy);
     }
 
+    public void get() throws IOException {
+        FileHandler.writeData(this.prizes, Path.of("./prizes.txt"));
+    }
+
     private boolean checkToy(Toy toy) {
         return toys.contains(toy);
     }
@@ -48,7 +55,7 @@ public class ToyStore {
         Iterator<Toy> iterator = this.toys.iterator();
         while (iterator.hasNext()) {
             Toy next = iterator.next();
-            if (toy.getId() == next.getId()) {
+            if (toy.getId().equals(next.getId())) {
                 this.toys.remove(next);
                 return next;
             }

@@ -1,7 +1,9 @@
 package org.example;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ToyStore toyStore = new ToyStore();
         toyStore.put(1, 30, 3, "robot");
         toyStore.put(2, 60, 2, "horse");
@@ -13,5 +15,7 @@ public class Main {
         toyStore.iWillBeLucky();
         toyStore.iWillBeLucky();
         toyStore.iWillBeLucky();
+        toyStore.print();
+        toyStore.get();
     }
 }
