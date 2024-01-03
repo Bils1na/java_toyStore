@@ -43,7 +43,7 @@ public class ToyStore {
         if (checkToy(toy)) toysPriority.add(toy);
     }
 
-    public void get() throws IOException {
+    public void getPrizes() throws IOException {
         FileHandler.writeData(this.prizes, Path.of("./prizes.txt"));
     }
 

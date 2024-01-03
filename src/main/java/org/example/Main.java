@@ -16,6 +16,6 @@ public class Main {
         toyStore.iWillBeLucky();
         toyStore.iWillBeLucky();
         toyStore.print();
-        toyStore.get();
+        toyStore.getPrizes();
     }
 }
